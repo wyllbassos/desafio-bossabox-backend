@@ -1,0 +1,24 @@
+[{
+        "name": "default",
+        "type": "postgres",
+        "host": "localhost",
+        "port": 5432,
+        "username": "pcm",
+        "password": "wylliam",
+        "database": "desafio_bossabox_backend",
+        "entities": ["./src/modules/**/infra/typeorm/entities/*.ts"],
+        "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
+        "cli": {
+            "migrationsDir": "./src/shared/infra/typeorm/migrations"
+        }
+    },
+    {
+        "type": "mongodb",
+        "url": "mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb",
+        "useNewUrlParser": true,
+        "synchronize": true,
+        "logging": true,
+        "useUnifiedTopology": true,
+        "entities": ["./src/modules/**/infra/typeorm/schemas/*.ts"]
+    }
+]
