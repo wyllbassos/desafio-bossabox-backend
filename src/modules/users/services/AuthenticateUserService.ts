@@ -44,10 +44,10 @@ class AuthenticateUserService {
       throw new AppError('Incorrect email/password combination.', 401);
     }
 
-    const { secrete, expiresIn } = autgConfig.jwt;
-    console.log(process.env);
+    let { secrete } = autgConfig.jwt;
+    const { expiresIn } = autgConfig.jwt;
     if (!secrete) {
-      throw new AppError('No APP_SECRETE create in .env file');
+      secrete = 'teste';
     }
 
     const token = sign({}, secrete, {
